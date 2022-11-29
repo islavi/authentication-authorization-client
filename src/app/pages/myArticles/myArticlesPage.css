@@ -1,0 +1,26 @@
+.my-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 20px;
+  margin: 0;
+}
+
+.my-owner {
+  font-size: 12px;
+}
+
+h1 {
+  padding: 20px 0 0 20px;
+}
+
+.my-description {
+  margin-top: 20px;
+  height: 200px;
+  overflow-y: auto;
+  border: solid 1px #dfdfdf;
+  background-color: #fafafa;
+  border-radius: 4px;
+  padding: 4px;
+}

@@ -1,0 +1,24 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.card {
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.button {
+  padding-top: 20px;
+}
