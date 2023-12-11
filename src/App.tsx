@@ -9,7 +9,7 @@ import { selectGeneral } from './app/redux/slices/general.slice'
 import { useEffect, useState } from 'react'
 import { resetState, selectAuthenticatedUser, setAuthenticatedUser } from './app/redux/slices/auth.slice'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
-import { Outlet, redirect } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const general = useAppSelector(selectGeneral)

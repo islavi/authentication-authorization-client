@@ -7,13 +7,13 @@ import { IArticle } from '../../interfaces/articles.interface'
 import './homePage.css'
 
 const HomePage = () => {
-  const [getAllArticles, { data, error, isLoading }] = useGetAllArticlesMutation()
+  const [getAllArticles, { data, error }] = useGetAllArticlesMutation()
   const dispatch = useAppDispatch()
   const [articles, setArticles] = useState<IArticle[]>([])
 
   useEffect(() => {
     getAllArticles(null)
-  }, [])
+  }, [getAllArticles])
 
   useEffect(() => {
     if (data && !error) {

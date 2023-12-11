@@ -37,7 +37,7 @@ const LoginPage = () => {
       NotificationManager.error('Error authenticating user, please check your email and password', 'Authentication Error')
       console.log(`LoginPage:: Authentication error`, error)
     }
-  }, [data, error, dispatch])
+  }, [data, error, dispatch, navigate])
 
   useEffect(() => {
     dispatch(setShowLoader(isLoading))

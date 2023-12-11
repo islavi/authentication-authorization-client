@@ -5,12 +5,12 @@ import { IArticle } from '../../interfaces/articles.interface'
 import './myArticlesPage.css'
 
 const MyArticlesPage = () => {
-  const [getMyArticles, { data, error, isLoading }] = useGetMyArticlesMutation()
+  const [getMyArticles, { data, error }] = useGetMyArticlesMutation()
   const [articles, setArticles] = useState<IArticle[]>([])
 
   useEffect(() => {
     getMyArticles(null)
-  }, [])
+  }, [getMyArticles])
 
   useEffect(() => {
     if (data && !error) {
