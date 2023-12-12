@@ -32,7 +32,7 @@ const LoginPage = () => {
       NotificationManager.success(`Welcome ${data.name}`, 'Authentication Success')
       localStorage.setItem('user', JSON.stringify(data))
       dispatch(setAuthenticatedUser(data))
-      navigate('home')
+      navigate('/home')
     } else if (error) {
       NotificationManager.error('Error authenticating user, please check your email and password', 'Authentication Error')
       console.log(`LoginPage:: Authentication error`, error)

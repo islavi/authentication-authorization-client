@@ -1,0 +1,12 @@
+.nav-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+}
+
+.nav-right {
+}

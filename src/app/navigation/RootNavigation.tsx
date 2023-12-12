@@ -6,19 +6,16 @@ import AboutPage from '../pages/about/AboutPage'
 import { useAppSelector } from '../redux/hooks'
 import { selectAuthenticatedUser } from '../redux/slices/auth.slice'
 
-// A wrapper for <Route> that redirects to the login
-// screen if you're not yet authenticated.
 const PrivateRoute = ({ ...rest }: RouteProps): React.ReactElement | null => {
   const { access_token } = useAppSelector(selectAuthenticatedUser)
-  // return access_token ? <Route {...rest} /> : <Route {...rest} element={<Navigate replace to="/" />} />
-  return access_token ? <Outlet /> : <Navigate to="/" />
+  return access_token ? <Outlet /> : <Navigate to="/login" />
 }
 
 const RootNavigation = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/my" element={<PrivateRoute />}>
           <Route path="/my" element={<MyArticlesPage />} />

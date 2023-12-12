@@ -5,6 +5,7 @@ import { articlesReducer } from './slices/articles.slice'
 import { authReducer } from './slices/auth.slice'
 import { generalReducer } from './slices/general.slice'
 import { userReducer } from './slices/user.slice'
+import unauthenticatedMiddleware from '../middlewares/unauthenticatedMiddleware'
 
 export const store = configureStore({
   reducer: {
@@ -16,7 +17,7 @@ export const store = configureStore({
     [authAPI.reducerPath]: authAPI.reducer,
     [articlesAPI.reducerPath]: articlesAPI.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([authAPI.middleware]).concat([articlesAPI.middleware]),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(unauthenticatedMiddleware).concat([authAPI.middleware]).concat([articlesAPI.middleware]),
 })
 
 export type RootState = ReturnType<typeof store.getState>
